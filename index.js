@@ -150,7 +150,7 @@ class TelnetSocket extends EventEmitter
     connection.on('error', err => this.emit('error', err));
 
     this.socket.write("\r\n");
-    this.telnetCommand(SEQ.WILL, Opts.OPT_GMCP);
+    this.telnetCommand(Seq.WILL, Opts.OPT_GMCP);
     this.once('GMCP', (gmcpPackage, gmcpData) => {
       this.gmcpData = gmcpData;
     });
